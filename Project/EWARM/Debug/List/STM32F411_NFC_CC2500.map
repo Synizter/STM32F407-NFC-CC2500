@@ -1,0 +1,484 @@
+###############################################################################
+#
+# IAR ELF Linker V7.60.1.11101/W32 for ARM                09/Mar/2017  17:26:35
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Exe\STM32F411_NFC_CC2500.out
+#    Map file     =  
+#        C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\List\STM32F411_NFC_CC2500.map
+#    Command line =  
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\bsp_f407.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\buzzer.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\misc.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\mrfi_f1f2.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\mrfi_lowlevel.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\mrfi_radio.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\mrfi_spi.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\network.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\startup_stm32f40xx.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\stm32f4xx_exti.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\stm32f4xx_gpio.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\stm32f4xx_it.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\stm32f4xx_rcc.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\stm32f4xx_spi.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\stm32f4xx_syscfg.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\stm32f4xx_usart.o"
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Obj\system_stm32f4xx.o" -o
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\Exe\STM32F411_NFC_CC2500.out" --redirect
+#        _Printf=_PrintfFull --redirect _Scanf=_ScanfFull --map
+#        "C:\Users\Goragod\Desktop\STM32F407_CC2500
+#        rev1\Project\EWARM\Debug\List\STM32F411_NFC_CC2500.map" --config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.4_2\arm\config\linker\ST\stm32f407xG.icf" --semihosting --entry
+#        __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x080fffff] { ro };
+"P3":  place in [from 0x10000000 to 0x1000ffff] { block CSTACK, section .ccram };
+"P4":  place in [from 0x20000000 to 0x2001bfff] |
+                [from 0x2001c000 to 0x2001ffff] { rw, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x188
+  .intvec            ro code  0x08000000   0x188  startup_stm32f40xx.o [1]
+                            - 0x08000188   0x188
+
+"P1":                                     0x14e8
+  .text              ro code  0x08000188   0x5ec  mrfi_radio.o [1]
+  .text              ro code  0x08000774   0x27e  mrfi_lowlevel.o [1]
+  .text              ro code  0x080009f4    0xb8  mrfi_f1f2.o [1]
+  .text              ro code  0x08000aac   0x1d8  mrfi_spi.o [1]
+  .text              ro code  0x08000c84   0x140  stm32f4xx_gpio.o [1]
+  .text              ro code  0x08000dc4    0x46  bsp_f407.o [1]
+  .text              ro code  0x08000e0c    0x6c  stm32f4xx_rcc.o [1]
+  .text              ro code  0x08000e78    0x7c  stm32f4xx_spi.o [1]
+  .text              ro code  0x08000ef4    0x54  stm32f4xx_syscfg.o [1]
+  .text              ro code  0x08000f48    0xbc  stm32f4xx_exti.o [1]
+  .text              ro code  0x08001004    0x7c  misc.o [1]
+  .text              ro code  0x08001080   0x180  buzzer.o [1]
+  .text              ro code  0x08001200    0x28  network.o [1]
+  .text              ro code  0x08001228   0x154  system_stm32f4xx.o [1]
+  .rodata            const    0x0800137c    0x40  mrfi_radio.o [1]
+  .text              ro code  0x080013bc    0x40  zero_init3.o [5]
+  .text              ro code  0x080013fc    0x2c  copy_init3.o [5]
+  .text              ro code  0x08001428    0x28  data_init.o [5]
+  .text              ro code  0x08001450    0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x08001474    0x24  - Linker created -
+  .text              ro code  0x08001498    0x1a  cmain.o [5]
+  .text              ro code  0x080014b2     0x4  low_level_init.o [3]
+  .text              ro code  0x080014b6     0x4  exit.o [3]
+  .text              ro code  0x080014bc     0xa  cexit.o [5]
+  .text              ro code  0x080014c8    0x14  exit.o [6]
+  .rodata            const    0x080014dc    0x10  mrfi_radio.o [1]
+  .text              ro code  0x080014ec    0x10  startup_stm32f40xx.o [1]
+  .text              ro code  0x080014fc     0xc  stm32f4xx_it.o [1]
+  .text              ro code  0x08001508     0xc  cstartup_M.o [5]
+  .rodata            const    0x08001514     0x4  mrfi_f1f2.o [1]
+  .rodata            const    0x08001518     0x4  mrfi_f1f2.o [1]
+  .text              ro code  0x0800151c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001520     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001524     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001528     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800152c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001530     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001534     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001538     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800153c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001540     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001544     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001548     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800154c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001550     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001554     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001558     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800155c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001560     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001564     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001568     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800156c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001570     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001574     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001578     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800157c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001580     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001584     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001588     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800158c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001590     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001594     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001598     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800159c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015a0     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015a4     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015a8     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015ac     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015b0     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015b4     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015b8     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015bc     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015c0     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015c4     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015c8     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015cc     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015d0     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015d4     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015d8     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015dc     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015e0     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015e4     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015e8     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015ec     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015f0     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015f4     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015f8     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x080015fc     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001600     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001604     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001608     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800160c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001610     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001614     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001618     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800161c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001620     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001624     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001628     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800162c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001630     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001634     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001638     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800163c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001640     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001644     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001648     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800164c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001650     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001654     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001658     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x0800165c     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001660     0x4  startup_stm32f40xx.o [1]
+  .text              ro code  0x08001664     0x4  startup_stm32f40xx.o [1]
+  .rodata            const    0x08001668     0x0  zero_init3.o [5]
+  .rodata            const    0x08001668     0x0  copy_init3.o [5]
+  Initializer bytes  const    0x08001668     0x8  <for P4 s0>
+                            - 0x08001670  0x14e8
+
+"P3":                                     0x2000
+  CSTACK                      0x10000000  0x2000  <Block>
+    CSTACK           uninit   0x10000000  0x2000  <Block tail>
+                            - 0x10002000  0x2000
+
+"P4", part 1 of 2:                           0x8
+  P4 s0                       0x20000000     0x8  <Init block>
+    .data            inited   0x20000000     0x4  mrfi_f1f2.o [1]
+    .data            inited   0x20000004     0x4  system_stm32f4xx.o [1]
+                            - 0x20000008     0x8
+
+"P4", part 2 of 2:                         0x230
+  .bss               zero     0x20000008   0x104  mrfi_radio.o [1]
+  .bss               zero     0x2000010c   0x100  buzzer.o [1]
+  .bss               zero     0x2000020c     0x4  buzzer.o [1]
+  .bss               zero     0x20000210     0x4  mrfi_f1f2.o [1]
+  .bss               zero     0x20000214     0x4  mrfi_f1f2.o [1]
+  .bss               zero     0x20000218     0x4  mrfi_radio.o [1]
+  .bss               zero     0x2000021c     0x4  mrfi_radio.o [1]
+  .bss               zero     0x20000220     0x4  mrfi_radio.o [1]
+  .bss               zero     0x20000224     0x2  mrfi_radio.o [1]
+  .bss               zero     0x20000226     0x2  mrfi_radio.o [1]
+  .bss               zero     0x20000228     0x1  buzzer.o [1]
+  .bss               zero     0x20000229     0x1  mrfi_f1f2.o [1]
+  .bss               zero     0x2000022a     0x1  mrfi_lowlevel.o [1]
+  .bss               zero     0x2000022b     0x1  mrfi_lowlevel.o [1]
+  .bss               zero     0x2000022c     0x1  mrfi_lowlevel.o [1]
+  .bss               zero     0x2000022d     0x1  mrfi_radio.o [1]
+  .bss               zero     0x2000022e     0x1  mrfi_radio.o [1]
+  .bss               zero     0x2000022f     0x1  mrfi_radio.o [1]
+  .bss               zero     0x20000230     0x1  mrfi_radio.o [1]
+  .bss               zero     0x20000231     0x1  mrfi_radio.o [1]
+  .bss               zero     0x20000232     0x1  mrfi_radio.o [1]
+  .bss               zero     0x20000233     0x1  mrfi_radio.o [1]
+  .bss               zero     0x20000234     0x1  network.o [1]
+                            - 0x20000235   0x22d
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x22d:
+          0x20000008  0x22d
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8:
+          0x08001668    0x8
+    1 destination range, total size 0x8:
+          0x20000000    0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+C:\Users\Goragod\Desktop\STM32F407_CC2500 rev1\Project\EWARM\Debug\Obj: [1]
+    bsp_f407.o                 70
+    buzzer.o                  384               261
+    misc.o                    124
+    mrfi_f1f2.o               184       12       13
+    mrfi_lowlevel.o           638                 3
+    mrfi_radio.o            1 516       80      283
+    mrfi_spi.o                472
+    network.o                  40                 1
+    startup_stm32f40xx.o      740
+    stm32f4xx_exti.o          188
+    stm32f4xx_gpio.o          320
+    stm32f4xx_it.o             12
+    stm32f4xx_rcc.o           108
+    stm32f4xx_spi.o           124
+    stm32f4xx_syscfg.o         84
+    system_stm32f4xx.o        340        4        4
+    -----------------------------------------------
+    Total:                  5 344       96      565
+
+command line: [2]
+    -----------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                      4
+    low_level_init.o            4
+    -----------------------------------------------
+    Total:                      8
+
+m7M_tls.a: [4]
+    fpinit_M.o                 34
+    -----------------------------------------------
+    Total:                     34
+
+rt7M_tl.a: [5]
+    cexit.o                    10
+    cmain.o                    26
+    copy_init3.o               44
+    cstartup_M.o               12
+    data_init.o                40
+    zero_init3.o               64
+    -----------------------------------------------
+    Total:                    196
+
+shb_l.a: [6]
+    exit.o                     20
+    -----------------------------------------------
+    Total:                     20
+
+    Gaps                        8        2
+    Linker created                      36    8 192
+---------------------------------------------------
+    Grand Total:            5 610      134    8 757
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x08001474          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08001498          --   Gb  - Linker created -
+?main                   0x08001499         Code  Gb  cmain.o [5]
+BSP_DelayUs             0x08000df3   0x18  Code  Gb  bsp_f407.o [1]
+BSP_DisableInterrupt    0x08000ddd    0x4  Code  Gb  bsp_f407.o [1]
+BSP_EnterCriticalSection
+                        0x08000de1    0x8  Code  Gb  bsp_f407.o [1]
+BSP_ExitCriticalSection
+                        0x08000de9    0xa  Code  Gb  bsp_f407.o [1]
+BSP_Init                0x08000dc5   0x18  Code  Gb  bsp_f407.o [1]
+BUZZER_ENABLE_FLAG      0x20000228    0x1  Data  Gb  buzzer.o [1]
+BusFault_Handler        0x08001503    0x2  Code  Gb  stm32f4xx_it.o [1]
+Buzzer_Init             0x0800110f   0x34  Code  Gb  buzzer.o [1]
+CSTACK$$Base            0x10000000          --   Gb  - Linker created -
+CSTACK$$Limit           0x10002000          --   Gb  - Linker created -
+DebugMon_Handler        0x08001507    0x2  Code  Gb  stm32f4xx_it.o [1]
+EXTI15_10_IRQHandler    0x080009bb   0x14  Code  Gb  mrfi_lowlevel.o [1]
+EXTI_ClearFlag          0x08000feb    0x6  Code  Gb  stm32f4xx_exti.o [1]
+EXTI_GetFlagStatus      0x08000fd1   0x1a  Code  Gb  stm32f4xx_exti.o [1]
+EXTI_Init               0x08000f49   0x88  Code  Gb  stm32f4xx_exti.o [1]
+GPIO_Init               0x08000c85   0xaa  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_PinAFConfig        0x08000d6b   0x5a  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_ReadInputDataBit   0x08000d2f   0x1a  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_ReadOutputDataBit  0x08000d49   0x1a  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_ResetBits          0x08000d67    0x4  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_SetBits            0x08000d63    0x4  Code  Gb  stm32f4xx_gpio.o [1]
+HardFault_Handler       0x080014ff    0x2  Code  Gb  stm32f4xx_it.o [1]
+MRFI_GDO0_CheckSignal   0x080009d9   0x14  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_ClearInterruptFlag
+                        0x08000999    0xc  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_ConfigAsInput
+                        0x080008c7   0x28  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_DisableInterrupt
+                        0x08000947   0x34  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_EnableInterrupt
+                        0x080008ef   0x58  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_GetInterruptFlag
+                        0x080009a5   0x16  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_IsInterruptEnable
+                        0x0800097b    0x6  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_ReleaseSignal
+                        0x080009ed    0x6  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GDO0_SignalInit    0x080009d3    0x6  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_GetRadioState      0x0800071b    0x6  Code  Gb  mrfi_radio.o [1]
+MRFI_GpioIsr            0x08000671   0x2e  Code  Gb  mrfi_radio.o [1]
+MRFI_Init               0x08000189  0x1c2  Code  Gb  mrfi_radio.o [1]
+MRFI_ReceiveCallback    0x08001143   0x36  Code  Gb  buzzer.o [1]
+MRFI_RxAddrIsFiltered   0x08000a31   0x62  Code  Gb  mrfi_f1f2.o [1]
+MRFI_RxOn               0x0800061b   0x2a  Code  Gb  mrfi_radio.o [1]
+MRFI_SPI_AcquireMutex   0x080009cf    0x2  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_SPI_GDO0IntState   0x2000022b    0x1  Data  Lc  mrfi_lowlevel.o [1]
+MRFI_SPI_IOInit         0x080007fb   0x8e  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_SPI_Init           0x08000775   0x80  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_SPI_InitState      0x2000022a    0x1  Data  Lc  mrfi_lowlevel.o [1]
+MRFI_SPI_IsInit         0x080007f5    0x6  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_SPI_LastReceiveBytes
+                        0x2000022c    0x1  Data  Lc  mrfi_lowlevel.o [1]
+MRFI_SPI_ReadByte       0x080008a7    0x6  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_SPI_ReleaseMutex   0x080009d1    0x2  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_SPI_WaitTransferDone
+                        0x080008ad   0x1a  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_SPI_WriteByte      0x08000889   0x1e  Code  Gb  mrfi_lowlevel.o [1]
+MRFI_ServiceRun         0x0800034b  0x2b2  Code  Gb  mrfi_radio.o [1]
+MRFI_ServiceRun::ReceiveState
+                        0x20000231    0x1  Data  Lc  mrfi_radio.o [1]
+MRFI_ServiceRun::frameBuf
+                        0x20000220    0x4  Data  Lc  mrfi_radio.o [1]
+MRFI_ServiceRun::frameLen
+                        0x20000233    0x1  Data  Lc  mrfi_radio.o [1]
+MRFI_ServiceRun::rxCount
+                        0x20000232    0x1  Data  Lc  mrfi_radio.o [1]
+MRFI_SetLogicalChannel  0x080009ff   0x32  Code  Gb  mrfi_f1f2.o [1]
+MRFI_SetRxModeControl   0x080009f5    0xa  Code  Gb  mrfi_f1f2.o [1]
+MemManage_Handler       0x08001501    0x2  Code  Gb  stm32f4xx_it.o [1]
+Mrfi_CalculateRssi      0x080006b1   0x3a  Code  Lc  mrfi_radio.o [1]
+Mrfi_ControlRxModeOff   0x20000210    0x4  Data  Lc  mrfi_f1f2.o [1]
+Mrfi_ControlRxModeOn    0x20000214    0x4  Data  Lc  mrfi_f1f2.o [1]
+Mrfi_DelayUsec          0x080006eb   0x30  Code  Lc  mrfi_radio.o [1]
+Mrfi_GDO0_ConfigAsSyncSignal
+                        0x0800069f   0x12  Code  Lc  mrfi_radio.o [1]
+Mrfi_RxModeOff          0x08000645   0x2c  Code  Lc  mrfi_radio.o [1]
+Mrfi_RxModeOn           0x08000601   0x1a  Code  Lc  mrfi_radio.o [1]
+NMI_Handler             0x080014fd    0x2  Code  Gb  stm32f4xx_it.o [1]
+NVIC_Init               0x08001005   0x6a  Code  Gb  misc.o [1]
+NVIC_SetPriority        0x08001081   0x26  Code  Lc  buzzer.o [1]
+NetworkInit             0x08001201   0x18  Code  Gb  network.o [1]
+PWM_Counter             0x2000020c    0x4  Data  Gb  buzzer.o [1]
+RCC_AHB1PeriphClockCmd  0x08000e0d   0x22  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x08000e2f   0x1e  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x08000e4d   0x1e  Code  Gb  stm32f4xx_rcc.o [1]
+RF_STATE                0x20000234    0x1  Data  Lc  network.o [1]
+Region$$Table$$Base     0x08001474          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08001498          --   Gb  - Linker created -
+SPI_Cmd                 0x08000eb9   0x1c  Code  Gb  stm32f4xx_spi.o [1]
+SPI_I2S_GetFlagStatus   0x08000edd   0x18  Code  Gb  stm32f4xx_spi.o [1]
+SPI_I2S_ReceiveData     0x08000ed5    0x4  Code  Gb  stm32f4xx_spi.o [1]
+SPI_I2S_SendData        0x08000ed9    0x4  Code  Gb  stm32f4xx_spi.o [1]
+SPI_Init                0x08000e79   0x40  Code  Gb  stm32f4xx_spi.o [1]
+SYSCFG_EXTILineConfig   0x08000ef5   0x50  Code  Gb  stm32f4xx_syscfg.o [1]
+SetSysClock             0x0800127b   0xce  Code  Lc  system_stm32f4xx.o [1]
+SysTick_Config          0x080010a7   0x30  Code  Lc  buzzer.o [1]
+SysTick_Handler         0x08001179   0x60  Code  Gb  buzzer.o [1]
+SystemCoreClock         0x20000004    0x4  Data  Gb  system_stm32f4xx.o [1]
+SystemInit              0x08001229   0x52  Code  Gb  system_stm32f4xx.o [1]
+UsageFault_Handler      0x08001505    0x2  Code  Gb  stm32f4xx_it.o [1]
+__cmain                 0x08001499         Code  Gb  cmain.o [5]
+__exit                  0x080014c9   0x14  Code  Gb  exit.o [6]
+__iar_copy_init3        0x080013fd   0x2c  Code  Gb  copy_init3.o [5]
+__iar_data_init3        0x08001429   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp          0x08001451         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x08001509         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x080013bd   0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x080014b3    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000         Data  Gb  startup_stm32f40xx.o [1]
+_call_main              0x080014a5         Code  Gb  cmain.o [5]
+_exit                   0x080014bd         Code  Gb  cexit.o [5]
+_main                   0x080014af         Code  Gb  cmain.o [5]
+exit                    0x080014b7    0x4  Code  Gb  exit.o [3]
+isNetwork_init          0x08001219    0x6  Code  Gb  network.o [1]
+main                    0x080010d7   0x38  Code  Gb  buzzer.o [1]
+mrfiBroadcastAddr       0x08001514    0x4  Data  Gb  mrfi_f1f2.o [1]
+mrfiGDO0Signal          0x2000021c    0x4  Data  Lc  mrfi_radio.o [1]
+mrfiGDO0State           0x2000022e    0x1  Data  Lc  mrfi_radio.o [1]
+mrfiIncomingPacket      0x20000008  0x104  Data  Lc  mrfi_radio.o [1]
+mrfiLogicalChanTable    0x08001518    0x4  Data  Lc  mrfi_f1f2.o [1]
+mrfiRadioCfg            0x0800137c   0x40  Data  Lc  mrfi_radio.o [1]
+mrfiRadioState          0x2000022d    0x1  Data  Lc  mrfi_radio.o [1]
+mrfiReceiveCallback     0x20000218    0x4  Data  Lc  mrfi_radio.o [1]
+mrfiRndSeed             0x2000022f    0x1  Data  Lc  mrfi_radio.o [1]
+mrfiRxFIFOSize          0x080014dc   0x10  Data  Lc  mrfi_radio.o [1]
+mrfiRxFilterAddr        0x20000000    0x4  Data  Lc  mrfi_f1f2.o [1]
+mrfiRxFilterEnabled     0x20000229    0x1  Data  Lc  mrfi_f1f2.o [1]
+mrfiSpiCmdStrobe        0x08000ac3   0x62  Code  Gb  mrfi_spi.o [1]
+mrfiSpiInit             0x08000aad   0x16  Code  Gb  mrfi_spi.o [1]
+mrfiSpiReadReg          0x08000b25   0x1e  Code  Gb  mrfi_spi.o [1]
+mrfiSpiReadRxFifo       0x08000bc7   0x14  Code  Gb  mrfi_spi.o [1]
+mrfiSpiWriteReg         0x08000b43   0x26  Code  Gb  mrfi_spi.o [1]
+mrfiTransmitActive      0x20000230    0x1  Data  Lc  mrfi_radio.o [1]
+packet                  0x2000010c  0x100  Data  Gb  buzzer.o [1]
+sBackoffHelper          0x20000226    0x2  Data  Lc  mrfi_radio.o [1]
+sReplyDelayScalar       0x20000224    0x2  Data  Lc  mrfi_radio.o [1]
+spiBurstFifoAccess      0x08000bdb   0xa6  Code  Lc  mrfi_spi.o [1]
+spiRegAccess            0x08000b69   0x5e  Code  Lc  mrfi_spi.o [1]
+
+
+[1] = C:\Users\Goragod\Desktop\STM32F407_CC2500 rev1\Project\EWARM\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  5 610 bytes of readonly  code memory
+    134 bytes of readonly  data memory
+  8 757 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
