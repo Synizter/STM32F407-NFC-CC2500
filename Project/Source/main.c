@@ -27,18 +27,25 @@ void Button_Init();
 uint8_t temp_buffer[64];
 uint8_t tmp_idx = 0;
 uint8_t len_resp_frame = 0;
-uint8_t NFC_ENABLE_FLAG = 1;
+uint8_t NFC_ENABLE_FLAG = 0;
 uint8_t BtnPressed = 0;
 uint16_t UID = 0;
+__IO uint32_t TimeDelay = 0;
 
 NFC_CmdType curr_cmd;
 MRFI_Packet packet;
+
+void _Delay_MS(uint32_t t) {
+  TimeDelay = t;
+  while(TimeDelay);
+}
 
 
 
 int main()
 {
-  
+  /*Systick interrupt every 1ms*/
+  SysTick_Config(SystemCoreClock/16800);
   NetworkInit();
   if(isNetwork_init()){
     NFC_Init();
@@ -62,7 +69,7 @@ int main()
         case 1:
           GPIO_SetBits(GPIOE, GPIO_Pin_12);
           CmdFrameSend(NFC_ACTIVATE);
-          
+
           if (BtnPressed) {
             CmdFrameSend(NFC_GET_UID);
           
@@ -76,7 +83,23 @@ int main()
             UID = 0;
             packet.payload_length = 0;
             BtnPressed = 0;
+            _Delay_MS(300);
           }
+        break;
+        
+        /*
+         * Send response back
+         */
+        case 2:
+          NFC_ENABLE_FLAG = 1;
+          /*Send Response*/
+          packet.payload_length = 3;
+          packet.payload[0] = 0xFF;
+          packet.payload[1] = 0xFF;
+          SendPacket(&packet);
+          
+          memset(packet.payload, 0, MRFI_MAX_PAYLOAD_SIZE);
+          packet.payload_length = 0;
         break;
         
         default:
@@ -96,7 +119,7 @@ void Button_Init() {
   NVIC_InitTypeDef NVIC_InitStructure;
   EXTI_InitTypeDef EXTI_InitStructure;
   
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+  //RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
   /* Button EXTI */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
@@ -104,7 +127,7 @@ void Button_Init() {
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);  
+  GPIO_Init(GPIOE, &GPIO_InitStructure);  
   /* LED */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
@@ -119,7 +142,7 @@ void Button_Init() {
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
   
-  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource0);
+  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource0);
   EXTI_InitStructure.EXTI_Line = EXTI_Line0;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
   EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
@@ -256,7 +279,7 @@ void MRFI_ReceiveCallback(mrfiPacket_t *packet) {
   uint32_t target_addr = (packet->frame[5] << 24) | (packet->frame[6] << 16) | (packet->frame[7] << 8) | (packet->frame[8]);
   
   if(target_addr == NFC_PERIPH_ADDR){
-    (packet->frame[9] == 'O')?(NFC_ENABLE_FLAG = 1):(NFC_ENABLE_FLAG = 0);
+    (packet->frame[9] == 'O')?(NFC_ENABLE_FLAG = 2):(NFC_ENABLE_FLAG = 0);
     }
 }
 void EXTI0_IRQHandler(void) {
@@ -280,4 +303,12 @@ void USART3_IRQHandler(void) {
     }
     
   }
+}
+
+void SysTick_Handler(){
+  /*Reset Counter*/
+  if (TimeDelay == 0)
+    return;
+  else
+    TimeDelay--;
 }

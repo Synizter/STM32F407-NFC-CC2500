@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4_2\common\bin\cspybat" -f "C:\Users\Goragod\Desktop\STM32F407_CC2500 rev1\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.general.xcl" --backend -f "C:\Users\Goragod\Desktop\STM32F407_CC2500 rev1\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\common\bin\cspybat" -f "C:\Users\Goragod\Desktop\previous work\STM32F407-NFC-CC2500\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.general.xcl" --backend -f "C:\Users\Goragod\Desktop\previous work\STM32F407-NFC-CC2500\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4_2\common\bin\cspybat" -f "C:\Users\Goragod\Desktop\STM32F407_CC2500 rev1\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Goragod\Desktop\STM32F407_CC2500 rev1\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\common\bin\cspybat" -f "C:\Users\Goragod\Desktop\previous work\STM32F407-NFC-CC2500\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Goragod\Desktop\previous work\STM32F407-NFC-CC2500\Project\EWARM\settings\STM32F411_NFC_CC2500.Debug.driver.xcl" 
 
 @echo off 
 :end
